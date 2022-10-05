@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>URL-shortner</title>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h2 class="heading">
+            Url Shortner
+        </h2>
+        <br> 
+        <div class="form-floating">
+            <form >
+                <input type="text"  class="form-control" id="floatingInputValue" placeholder="Enter the Url">
+                <!-- <label for="floatingInputInvalid">URL</label> -->
+                <br>
+                <button class="btn btn-light" type="submit">Shorten Url</button>
+            </form>
+        </div>
+        <p id="loading"></p>
+        <p id="shortUrl"></p>
+    </div>
+</body>
+</html>
