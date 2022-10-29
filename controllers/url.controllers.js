@@ -1,4 +1,5 @@
 const URL = require('../models/url');
+require('dotenv').config()
 const shortid = require('shortid');
 const isUrl = require("is-valid-http-url");
 const baseURL = process.env.baseURL
@@ -6,7 +7,6 @@ const baseURL = process.env.baseURL
 
 const createURL = async(req,res,next) => {
     const originalurl = req.body.originalurl;
-    console.log(baseURL);
     if(!isUrl(originalurl))
     {
         return res.status(422).send({
