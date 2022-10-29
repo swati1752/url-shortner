@@ -2,7 +2,7 @@ const URL = require('../models/url');
 require('dotenv').config()
 const shortid = require('shortid');
 const isUrl = require("is-valid-http-url");
-const baseURL = process.env.baseURL
+const baseURL = process.env.baseURL || 'https://sheltered-harbor-86959.herokuapp.com'
 
 
 const createURL = async(req,res,next) => {
