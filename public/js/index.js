@@ -7,10 +7,12 @@ urlForm.addEventListener('submit' , (e) =>{
     e.preventDefault()
     const originalurl = urlInput.value
     loading.textContent = "Creating...."
-    shortId.textContent = ' '
-
+    shortId.textContent = ''
+    console.log('k');
     fetch('/shortUrl' , {
-        method:POST,
+        method:'POST',
+        // mode:'cors',
+        // credentials: 'same-origin',
         headers:{
             'Accept':'application/json',
             'Content-type':'application/json'
@@ -23,17 +25,19 @@ urlForm.addEventListener('submit' , (e) =>{
     .then(data =>{
         if(data.error)
         {
-            loading.textContent = ' '
-            alert(error)
+            console.log('k');
+            loading.textContent = ''
+            alert(data.error)
         }
         else {
+            // console.log('error');
             alert(data.message)
-            loading.textContent = ' '
-            shortId.textContent = `Here is the short-url <a href=${data.originalURL} target="_blank" >${data.shortURL}</a>`
+            loading.textContent = ''
+            shortId.innerHTML = `Your shortUrl is: <a target="_blank" href=${data.link} rel="noopener noreferer">${data.shorturl} </a>`
         }
     })
     .catch((e)=>{
-        console.log(e);
+        // console.log(e);
         loading.textContent = '';
         shortUrl.textContent = 'Network Error! Please try again'
     })
